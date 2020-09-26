@@ -1,18 +1,18 @@
 <template>
     <header>
-        <menu-hamburger></menu-hamburger>
+        <menu-left></menu-left>
         <avatar-component></avatar-component>
     </header>
 </template>
 
 <script>
-import menuHamburger from "./menuHamburgerComponent";
-import avatarComponent from "./avatarComponent";
+import menuLeft from "../../components/menuLeftComponent/index";
+import avatarComponent from "../../components/avatarComponent/index";
 
 export default {
     name: "header-custom",
     components:{
-        menuHamburger,
+        menuLeft,
         avatarComponent
     }
 }

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { isDarkMode } from "./components/Theme.js";
+import { isDarkMode, toLight, toDark } from "./components/Theme.js";
 
 export default {
 	name: 'App',
@@ -13,19 +13,19 @@ export default {
 		const theme = localStorage.getItem("theme");
 		switch(theme){
 			case "light":
-				this.toLight()
+				toLight()
 			break
 			case "dark":
-				this.toDark()
+				toDark()
 			break
 			case "system":
 				if(isDarkMode())
-					this.toDark()
+					toDark()
 				else
-					this.toLight()
+					toLight()
 			break
 			default:
-				this.toDark()
+				toLight()
 		}
 	},
 	methods:{
@@ -53,6 +53,8 @@ export default {
 </script>
 
 <style lang="scss">
+	@import "@/components/Modal.scss";
+
 	:root{
 		--background: #fff;
 		--surface: #fff;
@@ -88,5 +90,11 @@ export default {
 	}
 	html{
 		background-color: var(--background);
+	}
+
+	.font_normal{
+		color: var(--title);
+		font-size: 1.7em;
+		line-height: 1em;
 	}
 </style>

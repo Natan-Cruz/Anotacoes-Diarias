@@ -1,12 +1,12 @@
 <template>
-    <div class="container-avatar">
+    <div class="container-avatar" @click="$emit('event-open-modal')">
         <img src="../../assets/pp.jpg" alt="Avatar">
     </div>
 </template>
 
 <script>
 export default {
-    name: "avatar-component"
+    name: "avatar-btn-component"
 }
 </script>
 

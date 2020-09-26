@@ -1,5 +1,5 @@
 <template>
-    <li class="card">
+    <li class="card" :id="`id${item._id}`">
         <div class="container-box-options">
             <div class="background-option" ref="background_box_options" @click="closeBoxOptions"></div>
             <span class="span-icon-table" @click="openBoxOptions">
@@ -56,7 +56,7 @@ export default {
 
 <style lang="scss" scoped>
     .card{
-        width: 200px;
+        width: 100%;
         height: 160px;
         background-color: var(--surface);
         box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.3);
@@ -66,7 +66,10 @@ export default {
         cursor: pointer;
         position: relative;
     }
-    
+    .remove-card{
+        transform: scale(0);
+        transition: 250ms;
+    }
 
     // 
     .header-card{
@@ -162,5 +165,12 @@ export default {
     .preview-text{
         font-size: 1.6em;
         color: var(--preview-text-card)
+    }
+
+    
+    @media screen and (min-width:760px) {
+        .card{
+            max-width:300px
+        }
     }
 </style>
